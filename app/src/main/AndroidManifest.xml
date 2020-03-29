@@ -16,12 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TelaInicialActivity" android:theme="@style/appTheme.Toolbar" />
         <activity android:name=".DebugActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TelaInicialActivity" android:theme="@style/appTheme.Toolbar" />
     </application>
 
 </manifest>
