@@ -5,7 +5,12 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorRoxo</item>
+        <item name="colorAccent">@color/colorWhite</item>
+    </style>
+
+    <style name="appTheme.Toolbar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

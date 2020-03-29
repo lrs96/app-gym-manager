@@ -3,4 +3,7 @@
     <string name="str_msg_login">Bem vindo, faça seu Login</string>
     <string name="str_text_user">Usuário</string>
     <string name="str_text_password">Senha</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">Atualizar</string>
+    <string name="action_config">Config</string>
 </resources>
