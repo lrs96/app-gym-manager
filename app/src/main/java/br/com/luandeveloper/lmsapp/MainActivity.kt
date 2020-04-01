@@ -29,7 +29,6 @@ class MainActivity : DebugActivity() {
         var textUsuario = campoUser.text.toString()
         val textPassword = campoPassword.text.toString()
 
-
         var intent = Intent(context, TelaInicialActivity::class.java)
         var param = Bundle()
         param.putString("nome_usuario", textUsuario)

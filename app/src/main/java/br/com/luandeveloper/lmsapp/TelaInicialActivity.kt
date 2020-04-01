@@ -32,7 +32,7 @@ class TelaInicialActivity : DebugActivity() {
         mensagemInicial.text = "Bem vindo $nome_usuario"
         btnLogoutApp.setOnClickListener { cliqueLogout() }
 
-        setSupportActionBar(toolbar)
+        //setSupportActionBar(toolbar)
 
         //Mudar o título da página
         supportActionBar?.title = "Cia Life"
