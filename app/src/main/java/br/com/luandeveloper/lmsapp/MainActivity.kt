@@ -28,8 +28,7 @@ class MainActivity : DebugActivity() {
     fun fazerLogin() {
         var textUsuario = campoUser.text.toString()
         val textPassword = campoPassword.text.toString()
-
-        var intent = Intent(context, TelaInicialActivity::class.java)
+        var intent = Intent(context, TelaInicioActivity::class.java)
         var param = Bundle()
         param.putString("nome_usuario", textUsuario)
         param.putInt("numero", 10)
