@@ -5,15 +5,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.login.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaInicialActivity : DebugActivity() {
+class TelaInicialActivity : AppCompatActivity() {
     private val context: Context get() = this
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +23,7 @@ class TelaInicialActivity : DebugActivity() {
         val nome_usuario = params?.getString("nome_usuario")
         var numero = params?.getInt("numero")
         mensagemInicial.text = "Bem vindo $nome_usuario"
+        mensagemInicial.textSize = 25F
 
 
         Toast.makeText(context, "Parâmetro: $nome_usuario", Toast.LENGTH_LONG).show()
@@ -31,14 +32,12 @@ class TelaInicialActivity : DebugActivity() {
 
         mensagemInicial.text = "Bem vindo $nome_usuario"
         btnLogoutApp.setOnClickListener { cliqueLogout() }
+        btnTelaCadastro.setOnClickListener { cliqueTelaCadastro() }
 
-        //setSupportActionBar(toolbar)
-
-        //Mudar o título da página
+        setSupportActionBar(toolbar)
         supportActionBar?.title = "Cia Life"
-
-        // Colocar a seta de voltar a página inicial
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
     }
 
@@ -48,6 +47,12 @@ class TelaInicialActivity : DebugActivity() {
         setResult(Activity.RESULT_OK, returnIntent)
         finish()
     }
+
+    fun cliqueTelaCadastro() {
+        var intent = Intent(context, TelaCadastroActivity::class.java)
+        startActivity(intent)
+    }
+
 
     // método sobrescrito para inflar o menu na Actionbar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

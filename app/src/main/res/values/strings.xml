@@ -1,14 +1,18 @@
 <resources>
-    <string name="app_name">LMSapp</string>
-    <string name="str_msg_login">Bem vindo, faça seu Login</string>
+    <string name="app_name">Gym Manager</string>
+    <string name="mensagem_login">Bem vindo, faça seu login</string>
     <string name="str_text_user">Usuário</string>
     <string name="str_text_password">Senha</string>
     <string name="action_buscar">Buscar</string>
     <string name="action_atualizar">Atualizar</string>
-    <string name="action_config">Config</string>
+    <string name="action_config">Configurações</string>
     <string name="action_adicionar">Adicionar</string>
     <string name="action_remover">Remover</string>
 
+    <string name="mensagem_cadastro">Cadastrar aluno</string>
+    <string name="str_text_nome">Nome</string>
+    <string name="str_text_cpf">CPF</string>
+    <string name="str_text_email">E-mail</string>
 
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>

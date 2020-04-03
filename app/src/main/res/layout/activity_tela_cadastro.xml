@@ -6,35 +6,67 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/texto_login"
+        android:id="@+id/texto_cadastro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/mensagem_login"
+        android:text="@string/mensagem_cadastro"
         android:textColor="#393838"
         android:textSize="25dp"
         android:textAlignment="center"
         />
 
     <TextView
-        android:id="@+id/texto_usuario"
+        android:id="@+id/texto_nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="@string/str_text_user"
+        android:text="@string/str_text_nome"
         android:textSize="18dp"
         android:textColor="#000000"/>
 
     <EditText
-        android:id="@+id/campoUser"
+        android:id="@+id/campoNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/texto_senha"
+        android:id="@+id/texto_cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/str_text_cpf"
+        android:textSize="18dp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/campoCpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <TextView
+    android:id="@+id/texto_email"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:text="@string/str_text_email"
+    android:textSize="18dp"
+    android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/campoEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/texto_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -50,7 +82,7 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stateListAnimator="@null"
