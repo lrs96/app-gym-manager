@@ -16,12 +16,32 @@
         android:layout_marginBottom="15dp"/>
 
     <Button
-        android:id="@+id/btnTelaCadastro"
+    android:id="@+id/btnTelaCadastro01"
+    android:layout_width="156dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimary"
+    android:text="novo aluno 01"
+    android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/btnTelaCadastro02"
         android:layout_width="156dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:background="@color/colorPrimary"
-        android:text="novo aluno"
+        android:text="novo aluno 02"
+        android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/btnTelaCadastro03"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:text="novo aluno 03"
         android:textColor="@color/colorWhite" />
 
     <Button

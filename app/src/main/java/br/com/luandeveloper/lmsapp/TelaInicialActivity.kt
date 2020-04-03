@@ -32,7 +32,6 @@ class TelaInicialActivity : AppCompatActivity() {
 
         mensagemInicial.text = "Bem vindo $nome_usuario"
         btnLogoutApp.setOnClickListener { cliqueLogout() }
-        btnTelaCadastro.setOnClickListener { cliqueTelaCadastro() }
 
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Cia Life"
@@ -46,11 +45,6 @@ class TelaInicialActivity : AppCompatActivity() {
         returnIntent.putExtra("Result", "Saindo do Aplicativo")
         setResult(Activity.RESULT_OK, returnIntent)
         finish()
-    }
-
-    fun cliqueTelaCadastro() {
-        var intent = Intent(context, TelaCadastroActivity::class.java)
-        startActivity(intent)
     }
 
 
