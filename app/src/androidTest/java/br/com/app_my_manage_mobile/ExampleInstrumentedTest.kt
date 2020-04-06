@@ -1,4 +1,4 @@
-package br.com.app_modelo_mobile
+package br.com.app_my_manage_mobile
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("br.com.app_modelo_mobile", appContext.packageName)
+        assertEquals("br.com.app_my_manage_mobile", appContext.packageName)
     }
 }

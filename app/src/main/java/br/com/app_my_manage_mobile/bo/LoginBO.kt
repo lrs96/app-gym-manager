@@ -1,11 +1,11 @@
-package br.com.app_modelo_mobile.bo
+package br.com.app_my_manage_mobile.bo
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
-import br.com.app_modelo_mobile.LoginActivity
-import br.com.app_modelo_mobile.util.showMsgToast
-import br.com.app_modelo_mobile.validation.LoginValidation
+import br.com.app_my_manage_mobile.showMsgToast
+import br.com.app_my_manage_mobile.validation.LoginValidation
+
 
 fun validarCamposLogin(validation: LoginValidation): Boolean {
     var result: Boolean = true

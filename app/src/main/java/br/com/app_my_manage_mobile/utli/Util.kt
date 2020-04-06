@@ -1,4 +1,4 @@
-package br.com.app_modelo_mobile.util
+package br.com.app_my_manage_mobile
 
 import android.content.DialogInterface
 import android.view.Window
@@ -8,7 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import br.com.app_modelo_mobile.R
+import br.com.app_my_manage_mobile.R
+import br.com.app_my_manage_mobile.TipoMsg
 
 
 fun showMsgToast(activity: AppCompatActivity, txt: String) {

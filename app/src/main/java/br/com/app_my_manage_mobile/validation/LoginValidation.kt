@@ -1,4 +1,4 @@
-package br.com.app_modelo_mobile.validation
+package br.com.app_my_manage_mobile.validation
 
 import android.app.Activity
 import android.widget.EditText

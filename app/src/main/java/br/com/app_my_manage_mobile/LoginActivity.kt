@@ -1,19 +1,14 @@
-package br.com.app_modelo_mobile
+package br.com.app_my_manage_mobile
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
-import br.com.app_modelo_mobile.bo.validarCamposLogin
-import br.com.app_modelo_mobile.util.showMsgToast
-import br.com.app_modelo_mobile.validation.LoginValidation
+import br.com.app_my_manage_mobile.bo.validarCamposLogin
+import br.com.app_my_manage_mobile.validation.LoginValidation
 import kotlinx.android.synthetic.main.activity_login.*
-import java.util.prefs.Preferences
-import br.com.app_modelo_mobile.MainActivity as MainActivity1
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         var login = preferences.getString("login", null)
         var senha = preferences.getString("senha", null)
 
-        if (!login.equals(null).and(!senha.equals(null))) {
-            var i = Intent(this, MainActivity1::class.java)
+        if (login !=null && senha!= null) {
+            var i = Intent(this, MainActivity::class.java)
             startActivity(i)
             finish()
         }
@@ -37,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
         edtLogin.findViewById<EditText>(R.id.edtLogin)
         edtSenha.findViewById<EditText>(R.id.edtSenha)
 
-        btnLogar.setOnClickListener(View.OnClickListener {
+        btnLogar?.setOnClickListener(View.OnClickListener {
 
             var login = edtLogin.text.toString()
             var senha = edtSenha.text.toString()
@@ -48,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
             var isValido = validarCamposLogin(validation)
 
             if (isValido) {
-                var i = Intent(this, MainActivity1::class.java)
+                var i = Intent(this, MainActivity::class.java)
                 startActivity(i)
                 finish()
 

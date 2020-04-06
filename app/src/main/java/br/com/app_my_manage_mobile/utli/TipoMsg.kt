@@ -1,4 +1,4 @@
-package br.com.app_modelo_mobile.util
+package br.com.app_my_manage_mobile
 
 enum class TipoMsg {
 
