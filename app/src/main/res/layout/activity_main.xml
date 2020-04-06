@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:padding="@dimen/padding_layout"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/txtView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ola_arq"
+        style="@style/Txt_Teste" />
+
+    <TextView
+        android:id="@+id/txtView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtView1"
+        android:text="@string/hollo_world"
+        style="@style/Txt_Teste"/>
+
+    <Button
+        android:id="@+id/btn_enviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/btn_enviar"
+        android:background="@color/bg_btn_padrao"
+        android:textSize="@dimen/txt_btn"
+        android:textColor="@color/white"
+        android:onClick="clickBtnEnviar"/>
+
+</RelativeLayout>
