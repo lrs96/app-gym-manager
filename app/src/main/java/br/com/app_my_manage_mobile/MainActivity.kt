@@ -18,9 +18,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Menu superior
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setTitle("Bem vindo, Arquimedes!")
+
+        supportActionBar?.setTitle("Bem vindo!")
+
+    }
+
+    fun clickBtnAlertErro(){
+        showMsgAlerta(this, "Titulo","Esta é a mensagem ... ", TipoMsg.erro)
+    }
+
+    fun clickBtnAlertSucess(){
+        showMsgAlerta(this, "Titulo","Esta é a mensagem ... ", TipoMsg.sucesso)
+    }
+
+    fun clickBtnEvolucaoFisica(view: View){
+        var i = Intent(this, EvolucaoFisicaActivity::class.java)
+        startActivity(i)
+
+    }
+
+    fun clickBtnaFichaMedica(view: View){
+        var i = Intent(this, FichaMedicaActivity::class.java)
+        startActivity(i)
+
+    }
+
+    fun clickBtnaRelatorioMensal(view: View){
+        var i = Intent(this, RelatorioMensalActivity::class.java)
+        startActivity(i)
 
     }
 
@@ -46,6 +71,21 @@ class MainActivity : AppCompatActivity() {
                 var i = Intent(this, LoginActivity::class.java)
                 startActivity(i)
             }
+            R.id.menu_adicionar -> {
+
+                var i = Intent(this, PessoaActivity::class.java)
+                startActivity(i)
+            }
+            R.id.menu_config -> {
+
+                var i = Intent(this, ConfiguracaoActivity::class.java)
+                startActivity(i)
+
+            }
+            R.id.menu_atualizar -> {
+                showMsgToast(this,"Atualizando...")
+            }
+
 
         }
         return super.onOptionsItemSelected(item)

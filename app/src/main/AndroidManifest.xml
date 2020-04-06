@@ -9,22 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
+        <activity android:name=".PessoaActivity"></activity>
+        <activity android:name=".ConfiguracaoActivity"></activity>
+        <activity android:name=".EvolucaoFisicaActivity"></activity>
+        <activity android:name=".FichaMedicaActivity"></activity>
+        <activity android:name=".PesquisaActivity"></activity>
+        <activity android:name=".RelatorioMensalActivity"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main" />
     </application>
 
 </manifest>

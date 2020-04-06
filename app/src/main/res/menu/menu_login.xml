@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".LoginActivity">
 
+    <item android:id="@+id/action_buscar"
+        android:icon="@drawable/buscar"
+        android:title="@string/menu_buscar"
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+
     <item
         android:id="@+id/menu_sair"
         android:orderInCategory="100"
@@ -12,8 +18,20 @@
 
     <item
         android:id="@+id/menu_adicionar"
-        android:orderInCategory="100"
-        android:title="@string/lbl_sair"
-        app:showAsAction="never"/>
+        android:orderInCategory="1"
+        android:title="@string/menu_adicionar"
+        app:showAsAction="never"/>_
+
+    <item
+        android:id="@+id/menu_atualizar"
+        android:orderInCategory="2"
+        android:title="@string/menu_Atualizar"
+        app:showAsAction="never"/>_
+
+    <item
+        android:id="@+id/menu_config"
+        android:orderInCategory="3"
+        android:title="@string/menu_conf"
+        app:showAsAction="never"/>_
 
 </menu>

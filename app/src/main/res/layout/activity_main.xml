@@ -8,20 +8,36 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/txtView1"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ola_arq"
-        style="@style/Txt_Teste" />
+        android:paddingBottom="20sp"
+        android:background="@color/bg_btn_padrao"
+        android:text="@string/bnt1"
+        style="@style/Txt_Teste"
+        android:onClick="clickBtnaFichaMedica"/>
 
-    <TextView
-        android:id="@+id/txtView2"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtView1"
-        android:text="@string/hollo_world"
-        style="@style/Txt_Teste"/>
+        android:paddingBottom="20sp"
+        android:background="@color/bg_btn_padrao"
+        android:text="@string/bnt2"
+        android:layout_below="@id/btn1"
+        style="@style/Txt_Teste"
+        android:onClick="clickBtnEvolucaoFisica"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_btn_padrao"
+        android:paddingBottom="20sp"
+        android:text="@string/bnt3"
+        android:layout_below="@id/btn2"
+        style="@style/Txt_Teste"
+        android:onClick="clickBtnaRelatorioMensal"/>
 
     <Button
         android:id="@+id/btn_enviar"

@@ -16,8 +16,22 @@
 
     <string name="mensagem_login">Bem vindo, faça seu login</string>
 
-    <string name="action_settings">Settings</string>
     <string name="lbl_sair">Sair</string>
+    <string name="menu_conf">Configuração</string>
+    <string name="menu_adicionar">Adicionar</string>
+    <string name="menu_Atualizar">Atualizar</string>
 
+
+    <string name="bnt1">Ficha Medica</string>
+    <string name="bnt2">Evolução Fisica</string>
+    <string name="bnt3">Relatorio Mensal</string>
+    <string name="menu_buscar">Buscar</string>
+    <string name="lblEmail">Email</string>
+    <string name="str_text_cpf">CPF</string>
+    <string name="str_text_nome">Nome</string>
+    <string name="mensagem_cadastro">Cadastro</string>
+    <string name="lblFichaMedica">FichaMedica</string>
+    <string name="lblEvolução">Evolução Fisica</string>
+    <string name="lblRelatorio">Relatório Mensal</string>
 
 </resources>
