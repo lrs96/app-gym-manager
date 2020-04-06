@@ -22,7 +22,7 @@ fun validarCamposLogin(validation: LoginValidation): Boolean {
 
     if (result) {
 
-        if (!validation.login.equals("admin").or(!validation.senha.equals("admin"))) {
+        if (!validation.login.equals("aluno").or(!validation.senha.equals("impacta"))) {
             result = if (!validation.login.contains("aluno.faculdadeimpacta.com.br")) {
                 validation.edtLogin.setError("Usuario invalido!")
                 false
