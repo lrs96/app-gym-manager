@@ -1,19 +1,23 @@
 <resources>
-    <string name="app_name">Gym Manager</string>
+
+
+    <string name="app_name">app_modelo_mobile</string>
+    <string name="ola_arq">Ola Arquimedes!</string>
+    <string name="hollo_world">Hello World!</string>
+
+    <string name="btn_enviar">Enviar</string>
+
+    <string name="title_activity_main">Main</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="lbl_login">Login</string>
+    <string name="lbl_senha">Senha</string>
+    <string name="btn_logar">Logar</string>
+
     <string name="mensagem_login">Bem vindo, faça seu login</string>
-    <string name="str_text_user">Usuário</string>
-    <string name="str_text_password">Senha</string>
-    <string name="action_buscar">Buscar</string>
-    <string name="action_atualizar">Atualizar</string>
-    <string name="action_config">Configurações</string>
-    <string name="action_adicionar">Adicionar</string>
-    <string name="action_remover">Remover</string>
 
-    <string name="mensagem_cadastro">Cadastrar aluno</string>
-    <string name="str_text_nome">Nome</string>
-    <string name="str_text_cpf">CPF</string>
-    <string name="str_text_email">E-mail</string>
+    <string name="action_settings">Settings</string>
+    <string name="lbl_sair">Sair</string>
 
-    <string name="navigation_drawer_open">Open</string>
-    <string name="navigation_drawer_close">Close</string>
+
 </resources>
