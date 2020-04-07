@@ -6,9 +6,12 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ProgressBar
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Menu superior
-
+        var progress = 0
+        progressBarId.visibility = View.INVISIBLE
         supportActionBar?.setTitle("Bem vindo!")
-
     }
 
     fun clickBtnAlertErro(){
@@ -58,7 +61,12 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    fun TreadProgressBar( view: View) {
+
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         when (item.itemId) {
             R.id.menu_sair -> {
                 var editor: SharedPreferences.Editor =
@@ -83,7 +91,29 @@ class MainActivity : AppCompatActivity() {
 
             }
             R.id.menu_atualizar -> {
-                showMsgToast(this,"Atualizando...")
+                // showMsgToast(this,"Atualizando...")
+                progressBarId.visibility = View.VISIBLE
+                var progressStatus = 0;
+                // Initialize a new Handler instance
+                val handler: Handler = Handler()
+                Thread(Runnable {
+                    while (progressStatus < 100) {
+                        // Update the progress status
+                        progressStatus += 1
+                        // Try to sleep the thread for 50 milliseconds
+                        try {
+                            Thread.sleep(10000)
+
+                        } catch (e: InterruptedException) {
+                            e.printStackTrace()
+                        }
+
+                        // Update the progress bar
+                        handler.post(Runnable {
+                            progressBarId.visibility = View.INVISIBLE
+                        })
+                    }
+                }).start()
             }
 
 

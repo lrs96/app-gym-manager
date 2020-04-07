@@ -56,4 +56,18 @@
         android:textColor="@color/white"
         android:textSize="@dimen/txt_btn" />
 
+    <ProgressBar
+        android:id="@+id/progressBarId"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="384dp"
+        android:layout_height="82dp"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="85dp"
+        android:indeterminate="true"
+        android:indeterminateDuration="10000"
+        android:indeterminateOnly="true"
+        android:indeterminateTint="@color/colorPrimary" />
+
 </RelativeLayout>
