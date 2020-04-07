@@ -3,51 +3,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+    android:background="@color/white"
     android:padding="@dimen/padding_layout"
     tools:context=".MainActivity">
 
 
     <Button
         android:id="@+id/btn1"
+        style="@style/Txt_Teste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="20sp"
-        android:background="@color/bg_btn_padrao"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"
+        android:onClick="clickBtnaFichaMedica"
         android:text="@string/bnt1"
-        style="@style/Txt_Teste"
-        android:onClick="clickBtnaFichaMedica"/>
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_btn" />
 
     <Button
         android:id="@+id/btn2"
+        style="@style/Txt_Teste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="20sp"
-        android:background="@color/bg_btn_padrao"
-        android:text="@string/bnt2"
         android:layout_below="@id/btn1"
-        style="@style/Txt_Teste"
-        android:onClick="clickBtnEvolucaoFisica"/>
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="clickBtnEvolucaoFisica"
+        android:text="@string/bnt2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_btn" />
 
     <Button
+        style="@style/Txt_Teste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bg_btn_padrao"
-        android:paddingBottom="20sp"
-        android:text="@string/bnt3"
         android:layout_below="@id/btn2"
-        style="@style/Txt_Teste"
-        android:onClick="clickBtnaRelatorioMensal"/>
+        android:background="@color/colorPrimary"
+        android:onClick="clickBtnaRelatorioMensal"
+        android:text="@string/bnt3"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_btn" />
 
     <Button
         android:id="@+id/btn_enviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:onClick="clickBtnEnviar"
         android:text="@string/btn_enviar"
-        android:background="@color/bg_btn_padrao"
-        android:textSize="@dimen/txt_btn"
         android:textColor="@color/white"
-        android:onClick="clickBtnEnviar"/>
+        android:textSize="@dimen/txt_btn" />
 
 </RelativeLayout>

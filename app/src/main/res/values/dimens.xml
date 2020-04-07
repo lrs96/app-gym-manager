@@ -10,7 +10,7 @@
 
     <dimen name="texto_padrao">20sp</dimen>
 
-    <dimen name="txt_btn">25sp</dimen>
+    <dimen name="txt_btn">17sp</dimen>
 
 
     <dimen name="activity_horizontal_margim">16dp</dimen>
