@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         //Menu superior
         var progress = 0
-        progressBarId.visibility = View.INVISIBLE
+
         supportActionBar?.setTitle("Bem vindo!")
     }
 
