@@ -47,24 +47,36 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     // para tratar os eventos de clique no menu lateral
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_diciplinas -> {
-                Toast.makeText(this, "Clicou Disciplinas", Toast.LENGTH_SHORT).show()
+            R.id.nav_dashboard -> {
+                var i = Intent(this, MainActivity::class.java)
+                startActivity(i)
             }
 
-            R.id.nav_mensagens -> {
-                Toast.makeText(this, "Clicou Mensagens", Toast.LENGTH_SHORT).show()
+            R.id.nav_listar_alunos -> {
+                var i = Intent(this, ListAlunosActivity::class.java)
+                startActivity(i)
             }
 
-            R.id.nav_forum -> {
-                Toast.makeText(this, "Clicou Forum", Toast.LENGTH_SHORT).show()
+            R.id.nav_adicionar_aluno -> {
+                var i = Intent(this, PessoaActivity::class.java)
+                startActivity(i)
             }
 
-            R.id.nav_localizacao -> {
-                Toast.makeText(this, "Clicou Localização", Toast.LENGTH_SHORT).show()
+            R.id.nav_adicionar_avaliacao -> {
+                var i = Intent(this, FichaMedicaActivity::class.java)
+                startActivity(i)
             }
 
-            R.id.nav_config -> {
-                Toast.makeText(this, "Clicou Config", Toast.LENGTH_SHORT).show()
+            R.id.nav_sair -> {
+                var editor: SharedPreferences.Editor =
+                    getSharedPreferences("pref", Context.MODE_PRIVATE).edit()
+                editor.remove("login")
+                editor.remove("senha")
+                editor.commit()
+
+                finish()
+                var i = Intent(this, LoginActivity::class.java )
+                startActivity(i)
             }
         }
 

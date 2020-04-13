@@ -19,24 +19,12 @@
         android:orientation="vertical"
         android:paddingTop="70dp"
         android:paddingHorizontal="25dp">
-        <Button
-            android:id="@+id/btn1"
-            style="@style/Txt_Teste"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@color/colorPrimary"
-            android:onClick="clickBtnaFichaMedica"
-            android:text="@string/bnt1"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txt_btn" />
 
         <Button
             android:id="@+id/btn2"
             style="@style/Txt_Teste"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn1"
             android:layout_marginBottom="20dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
@@ -67,11 +55,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/txt_btn" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </FrameLayout>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
