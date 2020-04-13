@@ -24,9 +24,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(toolbar)
         //Menu superior
         supportActionBar?.setTitle("Bem vindo!")
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         configuraMenuLateral()
     }
 
