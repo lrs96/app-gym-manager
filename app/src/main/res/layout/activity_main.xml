@@ -1,81 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutMenuLateral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="20dp"
-    android:paddingHorizontal="25dp">
-
-    <Button
-        android:id="@+id/btn1"
-        style="@style/Txt_Teste"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@color/colorPrimary"
-        android:onClick="clickBtnaFichaMedica"
-        android:text="@string/bnt1"
-        android:textColor="@color/white"
-        android:textSize="@dimen/txt_btn" />
-
-    <Button
-        android:id="@+id/btn2"
-        style="@style/Txt_Teste"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn1"
-        android:layout_marginBottom="20dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="clickBtnEvolucaoFisica"
-        android:text="@string/bnt2"
-        android:textColor="@color/white"
-        android:textSize="@dimen/txt_btn" />
-
-    <Button
-        style="@style/Txt_Teste"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn2"
-        android:background="@color/colorPrimary"
-        android:onClick="clickBtnaRelatorioMensal"
-        android:text="@string/bnt3"
-        android:textColor="@color/white"
-        android:textSize="@dimen/txt_btn" />
-
-    <FrameLayout
+    android:fitsSystemWindows="true">
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"> </include>
+    </LinearLayout>
 
-    </FrameLayout>
-    <FrameLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:paddingBottom="20dp">
+        android:orientation="vertical"
+        android:paddingTop="70dp"
+        android:paddingHorizontal="25dp">
         <Button
-            android:id="@+id/btn_enviar"
+            android:id="@+id/btn1"
+            style="@style/Txt_Teste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorPrimary"
+            android:onClick="clickBtnaFichaMedica"
+            android:text="@string/bnt1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_btn" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/Txt_Teste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn1"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="clickBtnEvolucaoFisica"
+            android:text="@string/bnt2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_btn" />
+
+        <Button
+            style="@style/Txt_Teste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn2"
+            android:background="@color/colorPrimary"
+            android:onClick="clickBtnaRelatorioMensal"
+            android:layout_marginBottom="20dp"
+            android:text="@string/bnt3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_btn" />
+
+        <Button
+            android:id="@+id/listAluno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:onClick="clickBtnEnviar"
-            android:text="@string/btn_enviar"
+            android:onClick="clickBtnaRelatorioMensal"
+            android:text="@string/bnt3"
             android:textColor="@color/white"
-            android:textSize="@dimen/txt_btn"
-            android:layout_gravity="bottom"/>
+            android:textSize="@dimen/txt_btn" />
 
-        <ProgressBar
-            android:id="@+id/progressBarId"
-            style="?android:attr/progressBarStyle"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:indeterminateDuration="10000"
-            android:indeterminateOnly="true"
-            android:layout_gravity="center"
-            android:indeterminateTint="@color/colorPrimary"
-            android:visibility="invisible" />
-    </FrameLayout>
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:paddingBottom="20dp">
+            <Button
+                android:id="@+id/btn_enviar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:onClick="clickBtnEnviar"
+                android:text="@string/btn_enviar"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_btn"
+                android:layout_gravity="bottom"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarId"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateDuration="10000"
+                android:indeterminateOnly="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--Menu lateral-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/menu_lateral"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/menu_lateral_cabecalho"
+        app:menu="@menu/menu_lateral">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

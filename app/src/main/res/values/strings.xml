@@ -1,37 +1,35 @@
 <resources>
 
+    <string name="app_name" translatable="false">app_modelo_mobile</string>
 
-    <string name="app_name">app_modelo_mobile</string>
-    <string name="ola_arq">Ola Arquimedes!</string>
-    <string name="hollo_world">Hello World!</string>
+    <string name="btn_enviar" translatable="false">Enviar</string>
 
-    <string name="btn_enviar">Enviar</string>
+    <string name="title_activity_main" translatable="false">Main</string>
+    <string name="title_activity_login" translatable="false">Login</string>
 
-    <string name="title_activity_main">Main</string>
-    <string name="title_activity_login">Login</string>
+    <string name="lbl_login" translatable="false">Login</string>
+    <string name="lbl_senha" translatable="false">Senha</string>
+    <string name="btn_logar" translatable="false">Logar</string>
 
-    <string name="lbl_login">Login</string>
-    <string name="lbl_senha">Senha</string>
-    <string name="btn_logar">Logar</string>
+    <string name="mensagem_login" translatable="false">Bem vindo, faça seu login</string>
 
-    <string name="mensagem_login">Bem vindo, faça seu login</string>
-
-    <string name="lbl_sair">Sair</string>
-    <string name="menu_conf">Configuração</string>
-    <string name="menu_adicionar">Adicionar</string>
-    <string name="menu_Atualizar">Atualizar</string>
+    <string name="lbl_sair" translatable="false">Sair</string>
+    <string name="menu_conf" translatable="false">Configuração</string>
+    <string name="menu_adicionar" translatable="false">Adicionar</string>
+    <string name="menu_Atualizar" translatable="false">Atualizar</string>
 
 
-    <string name="bnt1">Ficha Medica</string>
-    <string name="bnt2">Evolução Fisica</string>
-    <string name="bnt3">Relatorio Mensal</string>
-    <string name="menu_buscar">Buscar</string>
-    <string name="lblEmail">Email</string>
-    <string name="str_text_cpf">CPF</string>
-    <string name="str_text_nome">Nome</string>
-    <string name="mensagem_cadastro">Cadastro</string>
-    <string name="lblFichaMedica">FichaMedica</string>
-    <string name="lblEvolução">Evolução Fisica</string>
-    <string name="lblRelatorio">Relatório Mensal</string>
-
+    <string name="bnt1" translatable="false">Ficha Medica</string>
+    <string name="bnt2" translatable="false">Evolução Fisica</string>
+    <string name="bnt3" translatable="false">Relatorio Mensal</string>
+    <string name="menu_buscar" translatable="false">Buscar</string>
+    <string name="lblEmail" translatable="false">Email</string>
+    <string name="str_text_cpf" translatable="false">CPF</string>
+    <string name="str_text_nome" translatable="false">Nome</string>
+    <string name="mensagem_cadastro" translatable="false">Cadastro</string>
+    <string name="lblFichaMedica" translatable="false">FichaMedica</string>
+    <string name="lblEvolução" translatable="false">Evolução Fisica</string>
+    <string name="lblRelatorio" translatable="false">Relatório Mensal</string>
+    <string name="navigation_drawer_open" translatable="false">Abrir</string>
+    <string name="navigation_drawer_close" translatable="false">Fechar</string>
 </resources>

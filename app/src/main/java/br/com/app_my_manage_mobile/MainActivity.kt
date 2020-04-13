@@ -10,10 +10,14 @@ import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +25,50 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Menu superior
-        var progress = 0
-
         supportActionBar?.setTitle("Bem vindo!")
+
+        configuraMenuLateral()
+    }
+
+    // configuração do navigation Drawer com a toolbar
+    private fun configuraMenuLateral() {
+        // ícone de menu (hamburger) para mostrar o menu
+        var toogle = ActionBarDrawerToggle(this, layoutMenuLateral, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+
+        layoutMenuLateral.addDrawerListener(toogle)
+        toogle.syncState()
+
+        menu_lateral.setNavigationItemSelectedListener(this)
+    }
+
+    // método que deve ser implementado quando a activity implementa a interface NavigationView.OnNavigationItemSelectedListener
+    // para tratar os eventos de clique no menu lateral
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_diciplinas -> {
+                Toast.makeText(this, "Clicou Disciplinas", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_mensagens -> {
+                Toast.makeText(this, "Clicou Mensagens", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_forum -> {
+                Toast.makeText(this, "Clicou Forum", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_localizacao -> {
+                Toast.makeText(this, "Clicou Localização", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_config -> {
+                Toast.makeText(this, "Clicou Config", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // fecha menu depois de tratar o evento
+        layoutMenuLateral.closeDrawer(GravityCompat.START)
+        return true
     }
 
     fun clickBtnAlertErro(){
@@ -60,11 +105,6 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_login, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
-    fun TreadProgressBar( view: View) {
-
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {

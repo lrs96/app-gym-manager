@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PessoaActivity"></activity>
-        <activity android:name=".ConfiguracaoActivity"></activity>
-        <activity android:name=".EvolucaoFisicaActivity"></activity>
-        <activity android:name=".FichaMedicaActivity"></activity>
-        <activity android:name=".PesquisaActivity"></activity>
-        <activity android:name=".RelatorioMensalActivity"></activity>
+        <activity android:name=".PessoaActivity" />
+        <activity android:name=".ConfiguracaoActivity" />
+        <activity android:name=".EvolucaoFisicaActivity" />
+        <activity android:name=".FichaMedicaActivity" />
+        <activity android:name=".PesquisaActivity" />
+        <activity android:name=".RelatorioMensalActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
@@ -26,7 +26,14 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main" android:theme="@style/AppTheme.Toolbar" />
+        <activity android:name=".ListAlunosActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
