@@ -10,15 +10,19 @@ import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
+    private val context: Context get() =  this
+    private var disciplinas = listOf<Disciplina>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +34,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         configuraMenuLateral()
+
+        // configurar cardview
+        recyclerDisciplinas?.layoutManager = LinearLayoutManager(context)
+        recyclerDisciplinas?.itemAnimator = DefaultItemAnimator()
+        recyclerDisciplinas?.setHasFixedSize(true)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        taskDisciplinas()
+    }
+
+    fun taskDisciplinas() {
+        this.disciplinas = DisciplinaService.getDisciplinas(context)
+        // atualizar lista
+        recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) {onClickDisciplina(it)}
+    }
+
+    // tratamento do evento de clicar em uma disciplina
+    fun onClickDisciplina(disciplina: Disciplina) {
+        Toast.makeText(context, "Clicou disciplina ${disciplina.nome}", Toast.LENGTH_SHORT).show()
     }
 
     // configuração do navigation Drawer com a toolbar

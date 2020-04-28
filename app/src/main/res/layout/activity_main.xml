@@ -57,19 +57,9 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:paddingBottom="20dp">
-            <Button
-                android:id="@+id/btn_enviar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:onClick="clickBtnEnviar"
-                android:text="@string/btn_enviar"
-                android:textColor="@color/white"
-                android:textSize="@dimen/txt_btn"
-                android:layout_gravity="bottom"/>
 
             <ProgressBar
                 android:id="@+id/progressBarId"
@@ -84,6 +74,24 @@
                 android:visibility="invisible" />
         </FrameLayout>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerDisciplinas"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </ScrollView>
     </LinearLayout>
 
     <!--Menu lateral-->
