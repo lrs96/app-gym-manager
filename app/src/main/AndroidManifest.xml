@@ -31,7 +31,8 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" android:theme="@style/AppTheme.Toolbar" />
-        <activity android:name=".ListAlunosActivity">
+        <activity android:name=".ListAlunosActivity"
+                  android:label="Lista de Alunos" android:theme="@style/AppTheme.Toolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

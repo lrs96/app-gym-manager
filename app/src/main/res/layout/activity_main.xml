@@ -74,24 +74,6 @@
                 android:visibility="invisible" />
         </FrameLayout>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/recyclerDisciplinas"
-                android:cacheColorHint="@android:color/transparent"
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:listSelector="@android:color/transparent"
-                android:scrollbarStyle="outsideOverlay"
-                android:scrollbars="vertical">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
-        </ScrollView>
     </LinearLayout>
 
     <!--Menu lateral-->

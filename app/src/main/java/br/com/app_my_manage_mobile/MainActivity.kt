@@ -22,7 +22,6 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() =  this
-    private var disciplinas = listOf<Disciplina>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,35 +29,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(toolbar)
         //Menu superior
-        supportActionBar?.setTitle("Bem vindo!")
+        supportActionBar?.setTitle("Dashboard")
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         configuraMenuLateral()
 
-        // configurar cardview
-        recyclerDisciplinas?.layoutManager = LinearLayoutManager(context)
-        recyclerDisciplinas?.itemAnimator = DefaultItemAnimator()
-        recyclerDisciplinas?.setHasFixedSize(true)
     }
 
     override fun onResume() {
         super.onResume()
-        taskDisciplinas()
-    }
-
-    fun taskDisciplinas() {
-        Thread {
-            this.disciplinas = DisciplinaService.getDisciplinas(context)
-            runOnUiThread {
-                // atualizar lista
-                recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) { onClickDisciplina(it) }
-            }
-        }.start()
-    }
-
-    // tratamento do evento de clicar em uma disciplina
-    fun onClickDisciplina(disciplina: Disciplina) {
-        Toast.makeText(context, "Clicou disciplina ${disciplina.nome}", Toast.LENGTH_SHORT).show()
     }
 
     // configuração do navigation Drawer com a toolbar
