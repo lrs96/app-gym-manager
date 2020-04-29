@@ -20,7 +20,7 @@ class FichaMedicaActivity : AppCompatActivity() {
         //Menu superior
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setTitle(R.string.bnt1)
+        supportActionBar?.setTitle("Cadastro de Avaliação")
 
     }
 

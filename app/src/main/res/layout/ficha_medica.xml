@@ -1,21 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FichaMedicaActivity">
+    android:background="@color/colorPrimary"
+    tools:context=".FichaMedicaActivity"
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/texto_cadastro"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:text="@string/lblFichaMedica"
-        android:textColor="#393838"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:paddingBottom="50dp">
+        <TextView
+            android:id="@+id/texto_cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="Cadastrar Avaliação"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/texto_medida_peso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="Peso"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_peso"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_percentual_gordura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Percentual de Gordura"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campos_percentual_gordura"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_costas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida das costas"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_costas"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_peito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida dos peitos"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_peito"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_abdomem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida do Abdomem"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_abdomem"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_triceps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida dos Tríceps"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_triceps"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_biceps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida dos bíceps"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_biceps"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_antebraco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida dos Antebraços"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_antebraco"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_coxa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida das coxas"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_coxa"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <TextView
+            android:id="@+id/texto_medida_panturrilha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Medida das panturrilhas"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/campo_medida_panturrilha"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="numberDecimal"
+            android:paddingLeft="10dp" />
+
+        <Button
+            android:id="@+id/buttonCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:background="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:text="Cadastrar Avaliação"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp" />
+    </LinearLayout>
+</ScrollView>

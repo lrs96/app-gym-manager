@@ -87,14 +87,6 @@
         android:paddingVertical="10dp"
         android:textColor="@color/white"/>
 
-    <EditText
-        android:id="@+id/campoPassword"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/white"
-        android:inputType="textPassword"
-        android:padding="10dp"/>
-
     <Button
         android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"

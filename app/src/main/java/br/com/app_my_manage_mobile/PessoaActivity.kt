@@ -11,13 +11,11 @@ class PessoaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pessoa)
 
-        supportActionBar?.title = "Tela de Cadastro"
+        supportActionBar?.title = "Cadastro de Alunos"
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
