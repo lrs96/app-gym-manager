@@ -1,22 +1,32 @@
 package br.com.app_my_manage_mobile
 
 import android.content.Context
+import android.util.Log
+import br.com.fernandosousa.lmsapp.HttpHelper
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.net.URL
 
 object DisciplinaService {
+    val host = "https://fesousa.pythonanywhere.com"
+    val TAG = "WS_LMSApp"
 
     fun getDisciplinas (context: Context): List<Disciplina> {
-        val disciplinas = mutableListOf<Disciplina>()
+        if( AndroidUtils.isInternetDisponivel(context) ) {
+            val url = "$host/disciplinas"
+            var json =  HttpHelper.get(url)
 
-        // criar 10 disciplinas
-        for (i in 1..10) {
-            val d = Disciplina()
-            d.nome = "Disciplina $i"
-            d.ementa = "Ementa Disciplina $i"
-            d.professor = "Professor Disciplina $i"
-            d.foto = "https://cdn.pixabay.com/photo/2018/01/18/20/42/pencil-3091204_1280.jpg"
-            disciplinas.add(d)
+            Log.d(TAG, json)
+
+            return parserJson<List<Disciplina>>(json)
+        } else {
+            return ArrayList()
         }
-        return disciplinas
     }
 
+
+    inline fun<reified T> parserJson(json: String) : T {
+        val type = object : TypeToken<T>(){}.type
+        return Gson().fromJson<T>(json, type)
+    }
 }

@@ -47,9 +47,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun taskDisciplinas() {
-        this.disciplinas = DisciplinaService.getDisciplinas(context)
-        // atualizar lista
-        recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) {onClickDisciplina(it)}
+        Thread {
+            this.disciplinas = DisciplinaService.getDisciplinas(context)
+            runOnUiThread {
+                // atualizar lista
+                recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) { onClickDisciplina(it) }
+            }
+        }.start()
     }
 
     // tratamento do evento de clicar em uma disciplina
