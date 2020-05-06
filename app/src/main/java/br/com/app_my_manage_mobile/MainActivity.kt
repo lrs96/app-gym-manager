@@ -1,7 +1,6 @@
 package br.com.app_my_manage_mobile
 
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -10,12 +9,8 @@ import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -66,7 +61,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.nav_adicionar_aluno -> {
-                var i = Intent(this, PessoaActivity::class.java)
+                var i = Intent(this, CadastroAlunoActivity::class.java)
                 startActivity(i)
             }
 
@@ -143,7 +138,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.menu_adicionar -> {
 
-                var i = Intent(this, PessoaActivity::class.java)
+                var i = Intent(this, CadastroAlunoActivity::class.java)
                 startActivity(i)
             }
             R.id.menu_config -> {

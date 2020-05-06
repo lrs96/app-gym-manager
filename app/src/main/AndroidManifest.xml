@@ -12,31 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+        <activity android:name=".LoginActivity"  android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.Toolbar" />
-        <activity
-            android:name=".ListAlunosActivity"
-            android:label="Lista de Alunos"
-            android:theme="@style/AppTheme.Toolbar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".PessoaActivity" android:theme="@style/AppTheme.Toolbar" />
-        <activity android:name=".DisciplinaCadastroActivity"></activity>
+        <activity android:name=".MainActivity" android:label="@string/title_activity_main" android:theme="@style/AppTheme.Toolbar" />
+        <activity android:name=".ListAlunosActivity" android:label="Lista de Alunos" android:theme="@style/AppTheme.Toolbar" />
+        <activity android:name=".CadastroAlunoActivity" android:label="Cadastro de Alunos" android:theme="@style/AppTheme.Toolbar" />
+        <activity android:name=".DetalhesAlunoActivity" android:label="Detalhes do Aluno"  android:theme="@style/AppTheme.Toolbar" />
+        <activity android:name=".DisciplinaCadastroActivity" />
         <activity android:name=".ConfiguracaoActivity" />
         <activity android:name=".EvolucaoFisicaActivity" />
         <activity android:name=".FichaMedicaActivity" />

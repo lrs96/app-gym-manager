@@ -24,6 +24,8 @@ import kotlinx.android.synthetic.main.toolbar.*
 class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() =  this
     private var disciplinas = listOf<Disciplina>()
+    private var REQUEST_CADASTRO = 1
+    private var REQUEST_REMOVE= 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +61,9 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
     // tratamento do evento de clicar em uma disciplina
     fun onClickDisciplina(disciplina: Disciplina) {
         Toast.makeText(context, "Clicou disciplina ${disciplina.nome}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(context, DetalhesAlunoActivity::class.java)
+        intent.putExtra("disciplina", disciplina)
+        startActivityForResult(intent, REQUEST_REMOVE)
     }
 
     // configuração do navigation Drawer com a toolbar
@@ -87,7 +92,7 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
             }
 
             R.id.nav_adicionar_aluno -> {
-                var i = Intent(this, PessoaActivity::class.java)
+                var i = Intent(this, CadastroAlunoActivity::class.java)
                 startActivity(i)
             }
 
@@ -133,7 +138,7 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
             }
             R.id.menu_adicionar -> {
 
-                var i = Intent(this, PessoaActivity::class.java)
+                var i = Intent(this, CadastroAlunoActivity::class.java)
                 startActivity(i)
             }
             R.id.menu_config -> {
@@ -169,5 +174,12 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CADASTRO || requestCode == REQUEST_REMOVE ) {
+            // atualizar lista de disciplinas
+            taskDisciplinas()
+        }
     }
 }

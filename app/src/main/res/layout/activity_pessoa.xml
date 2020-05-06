@@ -6,7 +6,7 @@
     android:id="@+id/layoutMenuLateral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PessoaActivity"
+    tools:context=".CadastroAlunoActivity"
     android:background="@color/colorPrimary"
     android:fitsSystemWindows="true">
     <LinearLayout

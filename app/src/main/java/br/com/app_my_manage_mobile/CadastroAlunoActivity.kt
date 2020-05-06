@@ -5,21 +5,16 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_list_alunos.*
 import kotlinx.android.synthetic.main.activity_list_alunos.layoutMenuLateral
 import kotlinx.android.synthetic.main.activity_list_alunos.menu_lateral
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_pessoa.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class PessoaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class CadastroAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() =  this
     private var disciplinas = listOf<Disciplina>()
 
@@ -82,7 +77,7 @@ class PessoaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
 
             R.id.nav_adicionar_aluno -> {
-                var i = Intent(this, PessoaActivity::class.java)
+                var i = Intent(this, CadastroAlunoActivity::class.java)
                 startActivity(i)
             }
 
