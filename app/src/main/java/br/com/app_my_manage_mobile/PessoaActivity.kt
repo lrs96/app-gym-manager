@@ -33,6 +33,15 @@ class PessoaActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         configuraMenuLateral()
 
+        buttonCadastrar.setOnClickListener {
+            val disciplina = Disciplina()
+            disciplina.nome = campoNome.text.toString()
+            disciplina.ementa = campoEmenta.text.toString()
+            disciplina.professor = campoProfessor.text.toString()
+            disciplina.foto = campoFoto.text.toString()
+
+            taskAtualizar(disciplina)
+        }
 
     }
 

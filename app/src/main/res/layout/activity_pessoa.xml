@@ -47,47 +47,54 @@
             android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/texto_cpf"
+            android:id="@+id/texto_ementa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/str_text_cpf"
+            android:text="Ementa"
             android:paddingVertical="10dp"
             android:textSize="18dp"
             android:textColor="@color/white" />
 
         <EditText
-            android:id="@+id/campoCpf"
+            android:id="@+id/campoEmenta"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/texto_email"
+            android:id="@+id/texto_professor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="10dp"
-            android:text="@string/lblEmail"
+            android:text="Professor"
             android:textSize="18dp"
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/campoEmail"
+            android:id="@+id/campoProfessor"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/white"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/texto_password"
+            android:id="@+id/texto_foto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_senha"
+            android:text="Foto"
             android:textSize="18dp"
             android:paddingVertical="10dp"
             android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/campoFoto"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:paddingLeft="10dp"/>
 
         <Button
             android:id="@+id/buttonCadastrar"
@@ -96,7 +103,7 @@
             android:layout_marginTop="45dp"
             android:background="@color/white"
             android:fontFamily="sans-serif-black"
-            android:text="Cadastrar Aluno"
+            android:text="Cadastrar"
             android:textColor="@color/colorPrimary"
             android:textSize="18dp" />
     </LinearLayout>
