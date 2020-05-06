@@ -19,8 +19,8 @@
     <item
         android:id="@+id/menu_adicionar"
         android:orderInCategory="1"
-        android:title="@string/menu_adicionar"
-        app:showAsAction="never"/>_
+        android:title="Adicionar aluno"
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/menu_atualizar"

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,12 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PessoaActivity" />
-        <activity android:name=".ConfiguracaoActivity" />
-        <activity android:name=".EvolucaoFisicaActivity" />
-        <activity android:name=".FichaMedicaActivity" />
-        <activity android:name=".PesquisaActivity" />
-        <activity android:name=".RelatorioMensalActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login">
@@ -30,15 +23,25 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" android:theme="@style/AppTheme.Toolbar" />
-        <activity android:name=".ListAlunosActivity"
-                  android:label="Lista de Alunos" android:theme="@style/AppTheme.Toolbar">
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".ListAlunosActivity"
+            android:label="Lista de Alunos"
+            android:theme="@style/AppTheme.Toolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PessoaActivity" android:theme="@style/AppTheme.Toolbar" />
+        <activity android:name=".DisciplinaCadastroActivity"></activity>
+        <activity android:name=".ConfiguracaoActivity" />
+        <activity android:name=".EvolucaoFisicaActivity" />
+        <activity android:name=".FichaMedicaActivity" />
+        <activity android:name=".PesquisaActivity" />
+        <activity android:name=".RelatorioMensalActivity" />
     </application>
 
 </manifest>

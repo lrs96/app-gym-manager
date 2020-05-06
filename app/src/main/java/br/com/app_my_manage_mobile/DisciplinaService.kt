@@ -23,6 +23,19 @@ object DisciplinaService {
             return ArrayList()
         }
     }
+    fun save(disciplina: Disciplina): Response {
+        val json = HttpHelper.post("$host/disciplinas", disciplina.toJson())
+        return parserJson(json)
+    }
+
+    fun delete(disciplina: Disciplina): Response {
+        Log.d(TAG, disciplina.id.toString())
+        val url = "$host/disciplinas/${disciplina.id}"
+        val json = HttpHelper.delete(url)
+        Log.d(TAG, json)
+        return parserJson(json)
+    }
+
 
 
     inline fun<reified T> parserJson(json: String) : T {
