@@ -15,18 +15,17 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detalhes_aluno.*
 import kotlinx.android.synthetic.main.activity_detalhes_aluno.layoutMenuLateral
 import kotlinx.android.synthetic.main.activity_detalhes_aluno.menu_lateral
-import kotlinx.android.synthetic.main.activity_list_alunos.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class DetalhesAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() = this
-    var disciplina: Disciplina? = null
+    var disciplina: Aluno? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_aluno)
 
         // recuperar onjeto de Disciplina da Intent
-        disciplina = intent.getSerializableExtra("disciplina") as Disciplina
+        disciplina = intent.getSerializableExtra("disciplina") as Aluno
 
         // configurar título com nome da Disciplina e botão de voltar da Toobar
         // colocar toolbar
@@ -136,10 +135,10 @@ class DetalhesAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
     }
 
     private fun taskExcluir() {
-        if (this.disciplina != null && this.disciplina is Disciplina) {
+        if (this.disciplina != null && this.disciplina is Aluno) {
             // Thread para remover a disciplina
             Thread {
-                DisciplinaService.delete(this.disciplina as Disciplina)
+                AlunoService.delete(this.disciplina as Aluno)
                 runOnUiThread {
                     // após remover, voltar para activity anterior
                     finish()

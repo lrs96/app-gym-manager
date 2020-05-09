@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() =  this
-    private var disciplinas = listOf<Disciplina>()
+    private var disciplinas = listOf<Aluno>()
     private var REQUEST_CADASTRO = 1
     private var REQUEST_REMOVE= 2
 
@@ -50,16 +50,16 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
 
     fun taskDisciplinas() {
         Thread {
-            this.disciplinas = DisciplinaService.getDisciplinas(context)
+            this.disciplinas = AlunoService.getDisciplinas(context)
             runOnUiThread {
                 // atualizar lista
-                recyclerDisciplinas?.adapter = DisciplinaAdapter(disciplinas) { onClickDisciplina(it) }
+                recyclerDisciplinas?.adapter = AlunoAdapter(disciplinas) { onClickDisciplina(it) }
             }
         }.start()
     }
 
     // tratamento do evento de clicar em uma disciplina
-    fun onClickDisciplina(disciplina: Disciplina) {
+    fun onClickDisciplina(disciplina: Aluno) {
         Toast.makeText(context, "Clicou disciplina ${disciplina.nome}", Toast.LENGTH_SHORT).show()
         val intent = Intent(context, DetalhesAlunoActivity::class.java)
         intent.putExtra("disciplina", disciplina)

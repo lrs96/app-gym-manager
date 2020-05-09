@@ -8,12 +8,11 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.squareup.picasso.Picasso
-import  kotlinx.android.synthetic.main.adapter_disciplina.*
 
 // define o construtor que recebe a lista de disciplinas e o evento de clique
-class DisciplinaAdapter (
-    val disciplinas: List<Disciplina>,
-    val onClick: (Disciplina) -> Unit): RecyclerView.Adapter<DisciplinaAdapter.DisciplinasViewHolder>() {
+class AlunoAdapter (
+    val disciplinas: List<Aluno>,
+    val onClick: (Aluno) -> Unit): RecyclerView.Adapter<AlunoAdapter.DisciplinasViewHolder>() {
 
     // ViewHolder com os elemetos da tela
     class DisciplinasViewHolder(view: View): RecyclerView.ViewHolder(view) {

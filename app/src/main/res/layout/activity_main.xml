@@ -5,11 +5,142 @@
     android:id="@+id/layoutMenuLateral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/white">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <include layout="@layout/toolbar"> </include>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameTotalDeAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#000"
+        android:paddingHorizontal="25dp"
+        android:paddingTop="70dp">
+
+        <ImageView
+            android:id="@+id/imgRun1"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/icon_user_run" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalDeAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="20dp"
+            android:text="39"
+            android:textAlignment="center"
+            android:textSize="26dp"
+            app:fontFamily="sans-serif-black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTotalDeAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="15dp"
+            android:text="Total de alunos"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-black" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/FrameTotalDeAvaliacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#000"
+        android:paddingHorizontal="25dp"
+        android:paddingTop="270dp">
+
+        <ImageView
+            android:id="@+id/imgRun2"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/icon_user_run" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalDeAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="20dp"
+            android:text="55"
+            android:textAlignment="center"
+            android:textFontWeight="900"
+            android:textSize="26dp"
+            app:fontFamily="sans-serif-black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTotalDeAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/color_logo"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="15dp"
+            android:text="Avaliações Cadastradas"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameTotalDeAlunosSemAvaliacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#000"
+        android:paddingHorizontal="25dp"
+        android:paddingTop="470dp">
+
+        <ImageView
+            android:id="@+id/imgRun3"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:srcCompat="@drawable/icon_user_run" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalDeAlunosSemAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="20dp"
+            android:text="20"
+            android:textAlignment="center"
+            android:textFontWeight="900"
+            android:textSize="26dp"
+            app:fontFamily="sans-serif-black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTotalDeAlunosSemAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/bg_alert_info"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="15dp"
+            android:text="alunos sem Avaliações"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-black" />
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,43 +148,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingTop="70dp"
-        android:paddingHorizontal="25dp">
-
-        <Button
-            android:id="@+id/btn2"
-            style="@style/Txt_Teste"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:background="@color/colorPrimary"
-            android:gravity="center"
-            android:onClick="clickBtnEvolucaoFisica"
-            android:text="@string/bnt2"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txt_btn" />
-
-        <Button
-            style="@style/Txt_Teste"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn2"
-            android:background="@color/colorPrimary"
-            android:onClick="clickBtnaRelatorioMensal"
-            android:layout_marginBottom="20dp"
-            android:text="@string/bnt3"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txt_btn" />
-
-        <Button
-            android:id="@+id/listAluno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:onClick="clickBtnaRelatorioMensal"
-            android:text="@string/bnt3"
-            android:textColor="@color/white"
-            android:textSize="@dimen/txt_btn" />
+        android:paddingHorizontal="25dp"
+        android:gravity="bottom">
 
         <FrameLayout
             android:layout_width="match_parent"

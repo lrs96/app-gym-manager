@@ -3,7 +3,7 @@ package br.com.app_my_manage_mobile
 import com.google.gson.GsonBuilder
 import java.io.Serializable
 
-class Disciplina : Serializable {
+class Aluno : Serializable {
 
     var id:Long = 0
     var nome = ""
