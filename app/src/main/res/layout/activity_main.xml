@@ -21,25 +21,35 @@
         android:orientation="vertical"
         android:outlineAmbientShadowColor="#000"
         android:paddingHorizontal="25dp"
-        android:paddingTop="70dp">
+        android:paddingTop="70dp"
+        android:background="@drawable/background_border">
 
-        <ImageView
-            android:id="@+id/imgRun1"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            app:srcCompat="@drawable/icon_user_run" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/totalDeAlunos"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
-            android:paddingVertical="20dp"
-            android:text="39"
-            android:textAlignment="center"
-            android:textSize="26dp"
-            app:fontFamily="sans-serif-black" />
+            android:id="@+id/contentHeader1"
+            android:orientation="vertical"
+            android:background="@drawable/background_border"
+            android:paddingTop="20dp">
+            <ImageView
+                android:id="@+id/imgRun1"
+                android:layout_width="57dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/icon_user_run" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalDeAlunos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:paddingVertical="15dp"
+                android:text="39"
+                android:textAlignment="center"
+                android:textSize="26dp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textTotalDeAlunos"
@@ -60,29 +70,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
+        android:background="@drawable/background_border"
         android:orientation="vertical"
         android:outlineAmbientShadowColor="#000"
         android:paddingHorizontal="25dp"
         android:paddingTop="270dp">
 
-        <ImageView
-            android:id="@+id/imgRun2"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            app:srcCompat="@drawable/icon_user_run" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/totalDeAvaliacoes"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
-            android:paddingVertical="20dp"
-            android:text="55"
-            android:textAlignment="center"
-            android:textFontWeight="900"
-            android:textSize="26dp"
-            app:fontFamily="sans-serif-black" />
+            android:id="@+id/contentHeader2"
+            android:orientation="vertical"
+            android:background="@drawable/background_border"
+            android:paddingTop="20dp">
+            <ImageView
+                android:id="@+id/imgRun2"
+                android:layout_width="57dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/icon_user_run" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalDeAvaliacoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:paddingVertical="15dp"
+                android:text="55"
+                android:textAlignment="center"
+                android:textFontWeight="900"
+                android:textSize="26dp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textTotalDeAvaliacoes"
@@ -92,7 +112,7 @@
             android:background="@color/color_logo"
             android:fontFamily="sans-serif-black"
             android:paddingVertical="15dp"
-            android:text="Avaliações Cadastradas"
+            android:text="Avaliações cadastradas"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -108,25 +128,33 @@
         android:outlineAmbientShadowColor="#000"
         android:paddingHorizontal="25dp"
         android:paddingTop="470dp">
-
-        <ImageView
-            android:id="@+id/imgRun3"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            app:srcCompat="@drawable/icon_user_run" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/totalDeAlunosSemAvaliacoes"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
-            android:paddingVertical="20dp"
-            android:text="20"
-            android:textAlignment="center"
-            android:textFontWeight="900"
-            android:textSize="26dp"
-            app:fontFamily="sans-serif-black" />
+            android:id="@+id/contentHeader3"
+            android:orientation="vertical"
+            android:background="@drawable/background_border"
+            android:paddingTop="20dp">
+            <ImageView
+                android:id="@+id/imgRun3"
+                android:layout_width="57dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/icon_user_run" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalDeAlunosSemAvaliacoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:paddingVertical="15dp"
+                android:text="20"
+                android:textAlignment="center"
+                android:textFontWeight="900"
+                android:textSize="26dp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textTotalDeAlunosSemAvaliacoes"
@@ -136,7 +164,7 @@
             android:background="@color/bg_alert_info"
             android:fontFamily="sans-serif-black"
             android:paddingVertical="15dp"
-            android:text="alunos sem Avaliações"
+            android:text="Alunos sem avaliações"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
