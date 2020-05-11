@@ -15,13 +15,36 @@ object AlunoService {
             val url = "$host/disciplinas"
             var json =  HttpHelper.get(url)
 
+            var alunos = parserJson<List<Aluno>>(json)
+
+            for (a in alunos) {
+                saveOffile(a)
+            }
             Log.d(TAG, json)
 
-            return parserJson<List<Aluno>>(json)
+            return alunos
         } else {
-            return ArrayList()
+            var dao = DatabaseManager.getAlunoDAO()
+            return dao.findAll()
         }
     }
+
+    fun saveOffile(aluno: Aluno) : Boolean {
+        val dao = DatabaseManager.getAlunoDAO()
+
+        if(! existeAluno(aluno)) {
+            dao.insert(aluno)
+        }
+        return true
+
+    }
+
+    fun existeAluno(aluno: Aluno): Boolean {
+        val dao = DatabaseManager.getAlunoDAO()
+        return  dao.getById(aluno.id) != null
+    }
+
+
     fun save(disciplina: Aluno): Response {
         val json = HttpHelper.post("$host/disciplinas", disciplina.toJson())
         return parserJson(json)
