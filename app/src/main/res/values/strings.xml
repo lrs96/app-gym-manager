@@ -1,15 +1,35 @@
 <resources>
-    <string name="app_name">LMSapp</string>
-    <string name="str_msg_login">Bem vindo, faça seu Login</string>
-    <string name="str_text_user">Usuário</string>
-    <string name="str_text_password">Senha</string>
-    <string name="action_buscar">Buscar</string>
-    <string name="action_atualizar">Atualizar</string>
-    <string name="action_config">Config</string>
-    <string name="action_adicionar">Adicionar</string>
-    <string name="action_remover">Remover</string>
+
+    <string name="app_name" translatable="false">app_modelo_mobile</string>
+
+    <string name="btn_enviar" translatable="false">Enviar</string>
+
+    <string name="title_activity_main" translatable="false">Main</string>
+    <string name="title_activity_login" translatable="false">Login</string>
+
+    <string name="lbl_login" translatable="false">Login</string>
+    <string name="lbl_senha" translatable="false">Senha</string>
+    <string name="btn_logar" translatable="false">Logar</string>
+
+    <string name="mensagem_login" translatable="false">Bem vindo, faça seu login</string>
+
+    <string name="lbl_sair" translatable="false">Sair</string>
+    <string name="menu_conf" translatable="false">Configuração</string>
+    <string name="menu_adicionar" translatable="false">Adicionar</string>
+    <string name="menu_Atualizar" translatable="false">Atualizar</string>
 
 
-    <string name="navigation_drawer_open">Open</string>
-    <string name="navigation_drawer_close">Close</string>
+    <string name="bnt1" translatable="false">Ficha Medica</string>
+    <string name="bnt2" translatable="false">Evolução Fisica</string>
+    <string name="bnt3" translatable="false">Relatorio Mensal</string>
+    <string name="menu_buscar" translatable="false">Buscar</string>
+    <string name="lblEmail" translatable="false">Email</string>
+    <string name="str_text_cpf" translatable="false">CPF</string>
+    <string name="str_text_nome" translatable="false">Nome</string>
+    <string name="mensagem_cadastro" translatable="false">Cadastro</string>
+    <string name="lblFichaMedica" translatable="false">FichaMedica</string>
+    <string name="lblEvolução" translatable="false">Evolução Fisica</string>
+    <string name="lblRelatorio" translatable="false">Relatório Mensal</string>
+    <string name="navigation_drawer_open" translatable="false">Abrir</string>
+    <string name="navigation_drawer_close" translatable="false">Fechar</string>
 </resources>

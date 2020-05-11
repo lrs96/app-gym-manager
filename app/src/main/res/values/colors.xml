@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2e3192</color>
-    <color name="colorSecondary">#F0b413</color>
-    <color name="colorRoxo">#6264ad</color>
-    <color name="colorWhite">#fff</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#0000ff</color>
+
+    <color name="color_logo">#6264ad</color>
+
+    <!-- Toast  -->
+    <color name="bg_toast">#0000ff</color>
+
+    <color name="bg_color">#E9C590</color>
+
+    <!-- Btn  -->
+    <color name="bg_btn_padrao">#EEFF5722</color>
+    <color name="txt_btn_padrao">#ECECF1</color>
+
+    <!-- Txt   -->
+    <color name="txt_padrao">#070730</color>
+
+
+    <color name="colorPrimary">#2E3192</color>
+    <color name="colorPrimaryDark">#2E3192</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- Alert  -->
+    <color name="bg_alert">#F8F6F6</color>
+    <color name="bg_alert_info">#FFC107</color>
+    <color name="bg_alert_erro">#ff0000</color>
+    <color name="bg_alert_sucess">#C300FF37</color>
+
+
 </resources>

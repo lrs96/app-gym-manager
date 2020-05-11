@@ -1,4 +1,4 @@
-package br.com.luandeveloper.lmsapp
+package br.com.app_my_manage_mobile
 
 import org.junit.Test
 

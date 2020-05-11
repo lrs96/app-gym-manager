@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutMenuLateral"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar"> </include>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameTotalDeAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#000"
+        android:paddingHorizontal="25dp"
+        android:paddingTop="70dp"
+        android:background="@drawable/background_border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contentHeader1"
+            android:orientation="vertical"
+            android:background="@drawable/background_border"
+            android:paddingTop="20dp">
+            <ImageView
+                android:id="@+id/imgRun1"
+                android:layout_width="57dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/icon_user_run" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalDeAlunos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:paddingVertical="15dp"
+                android:text="39"
+                android:textAlignment="center"
+                android:textSize="26dp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTotalDeAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="15dp"
+            android:text="Total de alunos"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-black" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/FrameTotalDeAvaliacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:background="@drawable/background_border"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#000"
+        android:paddingHorizontal="25dp"
+        android:paddingTop="270dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contentHeader2"
+            android:orientation="vertical"
+            android:background="@drawable/background_border"
+            android:paddingTop="20dp">
+            <ImageView
+                android:id="@+id/imgRun2"
+                android:layout_width="57dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/icon_user_run" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalDeAvaliacoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:paddingVertical="15dp"
+                android:text="55"
+                android:textAlignment="center"
+                android:textFontWeight="900"
+                android:textSize="26dp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTotalDeAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/color_logo"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="15dp"
+            android:text="Avaliações cadastradas"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/FrameTotalDeAlunosSemAvaliacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#000"
+        android:paddingHorizontal="25dp"
+        android:paddingTop="470dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contentHeader3"
+            android:orientation="vertical"
+            android:background="@drawable/background_border"
+            android:paddingTop="20dp">
+            <ImageView
+                android:id="@+id/imgRun3"
+                android:layout_width="57dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/icon_user_run" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalDeAlunosSemAvaliacoes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-black"
+                android:paddingVertical="15dp"
+                android:text="20"
+                android:textAlignment="center"
+                android:textFontWeight="900"
+                android:textSize="26dp"
+                app:fontFamily="sans-serif-black" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTotalDeAlunosSemAvaliacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/bg_alert_info"
+            android:fontFamily="sans-serif-black"
+            android:paddingVertical="15dp"
+            android:text="Alunos sem avaliações"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:fontFamily="sans-serif-black" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="25dp"
+        android:gravity="bottom">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingBottom="20dp">
+
+            <ProgressBar
+                android:id="@+id/progressBarId"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateDuration="10000"
+                android:indeterminateOnly="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--Menu lateral-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/menu_lateral"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/menu_lateral_cabecalho"
+        app:menu="@menu/menu_lateral">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

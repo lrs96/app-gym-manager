@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='LMSapp'
+rootProject.name='app_my_manage_mobile'

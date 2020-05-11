@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_layout"
+    tools:context=".ConfiguracaoActivity">
+
+    <TextView
+        android:id="@+id/texto_cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/menu_conf"
+        android:textColor="#393838"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        />
+
+</FrameLayout>
