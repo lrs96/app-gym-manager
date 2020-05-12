@@ -32,24 +32,49 @@ class LoginActivity : AppCompatActivity() {
         edtLogin.findViewById<EditText>(R.id.edtLogin)
         edtSenha.findViewById<EditText>(R.id.edtSenha)
 
-        btnLogar?.setOnClickListener(View.OnClickListener {
+        btnLogar?.setOnClickListener{ onClickLogin() }
 
-            var login = edtLogin.text.toString()
-            var senha = edtSenha.text.toString()
+        // procurar pelas preferências, se pediu para guardar usuário e senha
+        var lembrar = Prefs.getBoolean("lembrar")
+        if (lembrar) {
+            var lembrarNome  = Prefs.getString("lembrarNome")
+            var lembrarSenha  = Prefs.getString("lembrarSenha")
+            edtLogin.setText(lembrarNome)
+            edtSenha.setText(lembrarSenha)
+            checkBoxLogin.isChecked = lembrar
 
-            var validation: LoginValidation =
-                LoginValidation(login, senha, edtLogin, edtSenha, this)
+        }
 
-            var isValido = validarCamposLogin(validation)
+    }
 
-            if (isValido) {
-                var i = Intent(this, MainActivity::class.java)
-                startActivity(i)
-                finish()
+    fun onClickLogin() {
 
-            }
+        var login = edtLogin.text.toString()
+        var senha = edtSenha.text.toString()
 
-        })
+        // armazenar valor do checkbox
+        Prefs.setBoolean("lembrar", checkBoxLogin.isChecked)
+        // verificar se é para pembrar nome e senha
+        if (checkBoxLogin.isChecked) {
+            Prefs.setString("lembrarNome", login)
+            Prefs.setString("lembrarSenha", senha)
+        } else{
+            Prefs.setString("lembrarNome", "")
+            Prefs.setString("lembrarSenha", "")
+        }
+
+        var validation: LoginValidation =
+            LoginValidation(login, senha, edtLogin, edtSenha, this)
+
+        var isValido = validarCamposLogin(validation)
+
+        if (isValido) {
+            var i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+            finish()
+
+        }
+
     }
 
 
