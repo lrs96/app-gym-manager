@@ -8,7 +8,7 @@ import androidx.room.Query
 @Dao
 interface AlunoDAO {
 
-        @Query("SELECT * FROM aluno WHERE id = :id")
+    @Query("SELECT * FROM aluno WHERE id = :id")
     fun getById(id: Long): Aluno?
 
     @Query("Select * FROM aluno")

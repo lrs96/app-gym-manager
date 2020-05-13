@@ -12,12 +12,12 @@ class Aluno : Serializable {
     @PrimaryKey
     var id:Long = 0
     var nome = ""
-    var ementa = ""
+    var idade = ""
     var foto = ""
-    var professor = ""
+    var cpf = ""
 
     override fun toString(): String {
-        return "Disciplina(nome='$nome')"
+        return "Aluno(nome='$nome')"
     }
 
     fun toJson(): String {

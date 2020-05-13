@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class CadastroAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() =  this
-    private var disciplinas = listOf<Aluno>()
+    private var alunos = listOf<Aluno>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,21 +29,20 @@ class CadastroAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
         configuraMenuLateral()
 
         buttonCadastrar.setOnClickListener {
-            val disciplina = Aluno()
-            disciplina.nome = campoNome.text.toString()
-            disciplina.ementa = campoEmenta.text.toString()
-            disciplina.professor = campoProfessor.text.toString()
-            disciplina.foto = campoFoto.text.toString()
-
-            taskAtualizar(disciplina)
+            val aluno = Aluno()
+            aluno.nome = campoNome.text.toString()
+            aluno.idade = campoIdade.text.toString()
+            aluno.cpf = campoCpf.text.toString()
+            aluno.foto = campoFoto.text.toString()
+            taskAtualizar(aluno)
         }
 
     }
 
-    private fun taskAtualizar(disciplina: Aluno) {
+    private fun taskAtualizar(aluno: Aluno) {
         // Thread para salvar a discilpina
         Thread {
-            AlunoService.save(disciplina)
+            AlunoService.save(aluno)
             runOnUiThread {
                 // após cadastrar, voltar para activity anterior
                 finish()

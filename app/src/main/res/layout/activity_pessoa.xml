@@ -47,16 +47,16 @@
             android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/texto_ementa"
+            android:id="@+id/text_cpf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ementa"
+            android:text="CPF"
             android:paddingVertical="10dp"
             android:textSize="18dp"
             android:textColor="@color/white" />
 
         <EditText
-            android:id="@+id/campoEmenta"
+            android:id="@+id/campoCpf"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/white"
@@ -64,16 +64,16 @@
             android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/texto_professor"
+            android:id="@+id/texto_idade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="10dp"
-            android:text="Professor"
+            android:text="Idade"
             android:textSize="18dp"
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/campoProfessor"
+            android:id="@+id/campoIdade"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@color/white"

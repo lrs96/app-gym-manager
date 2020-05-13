@@ -19,28 +19,28 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class DetalhesAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() = this
-    var disciplina: Aluno? = null
+    var aluno: Aluno? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_aluno)
 
         // recuperar onjeto de Disciplina da Intent
-        disciplina = intent.getSerializableExtra("disciplina") as Aluno
+        aluno = intent.getSerializableExtra("aluno") as Aluno
 
         // configurar título com nome da Disciplina e botão de voltar da Toobar
         // colocar toolbar
         setSupportActionBar(toolbar)
 
         // alterar título da ActionBar
-        supportActionBar?.title = disciplina?.nome
+        supportActionBar?.title = aluno?.nome
 
         // up navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         configuraMenuLateral()
         // atualizar dados da disciplina
-        nomeDisciplina.text = disciplina?.nome
-        Picasso.with(this).load(disciplina?.foto).fit().into(imagemDisciplina,
+        nomeAluno.text = aluno?.nome
+        Picasso.with(this).load(aluno?.foto).fit().into(imagemAluno,
             object: com.squareup.picasso.Callback{
                 override fun onSuccess() {}
 
@@ -117,7 +117,7 @@ class DetalhesAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
             // alerta para confirmar a remeção
             // só remove se houver confirmação positiva
             AlertDialog.Builder(this)
-                .setTitle(disciplina?.nome)
+                .setTitle(aluno?.nome)
                 .setMessage("Deseja excluir o Aluno")
                 .setPositiveButton("Sim") {
                         dialog, which ->
@@ -135,10 +135,10 @@ class DetalhesAlunoActivity : AppCompatActivity(), NavigationView.OnNavigationIt
     }
 
     private fun taskExcluir() {
-        if (this.disciplina != null && this.disciplina is Aluno) {
+        if (this.aluno != null && this.aluno is Aluno) {
             // Thread para remover a disciplina
             Thread {
-                AlunoService.delete(this.disciplina as Aluno)
+                AlunoService.delete(this.aluno as Aluno)
                 runOnUiThread {
                     // após remover, voltar para activity anterior
                     finish()
