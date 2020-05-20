@@ -88,36 +88,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    fun clickBtnAlertErro(){
-        showMsgAlerta(this, "Titulo","Esta é a mensagem ... ", TipoMsg.erro)
-    }
-
-    fun clickBtnAlertSucess(){
-        showMsgAlerta(this, "Titulo","Esta é a mensagem ... ", TipoMsg.sucesso)
-    }
-
-    fun clickBtnEvolucaoFisica(view: View){
-        var i = Intent(this, EvolucaoFisicaActivity::class.java)
-        startActivity(i)
-
-    }
-
-    fun clickBtnaFichaMedica(view: View){
-        var i = Intent(this, FichaMedicaActivity::class.java)
-        startActivity(i)
-
-    }
-
-    fun clickBtnaRelatorioMensal(view: View){
-        var i = Intent(this, RelatorioMensalActivity::class.java)
-        startActivity(i)
-
-    }
-
-    fun clickBtnEnviar(view: View) {
-        showMsgAlerta(this, "Titulo", "Esta é a mensagem...", TipoMsg.info)
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_login, menu)
         return super.onCreateOptionsMenu(menu)
@@ -177,4 +147,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

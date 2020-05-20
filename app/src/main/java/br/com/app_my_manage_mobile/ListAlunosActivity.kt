@@ -54,6 +54,7 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
             runOnUiThread {
                 // atualizar lista
                 recyclerAlunos?.adapter = AlunoAdapter(alunos) { onClickDisciplina(it) }
+                enviaNotificacao(alunos.get(2))
             }
         }.start()
     }
@@ -65,6 +66,13 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
         intent.putExtra("aluno", aluno)
         startActivityForResult(intent, REQUEST_REMOVE)
     }
+
+    fun enviaNotificacao(aluno: Aluno){
+        val intent = Intent(this, DetalhesAlunoActivity::class.java)
+        intent.putExtra("aluno", aluno)
+        NotificationUtil.create(this, 2, intent, "Aplicativo Gym Manager", "Você tem uma nova notificação ${aluno.nome}")
+    }
+
 
     // configuração do navigation Drawer com a toolbar
     private fun configuraMenuLateral() {
@@ -181,5 +189,6 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
             // atualizar lista de disciplinas
             taskDisciplinas()
         }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
