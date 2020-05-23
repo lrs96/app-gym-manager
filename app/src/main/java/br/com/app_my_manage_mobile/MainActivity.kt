@@ -69,6 +69,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 var i = Intent(this, FichaMedicaActivity::class.java)
                 startActivity(i)
             }
+            R.id.nav_localizacao -> {
+                startActivity(Intent(this, MapsActivity::class.java))
+            }
 
             R.id.nav_sair -> {
                 var editor: SharedPreferences.Editor =
