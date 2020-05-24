@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
     private val context: Context get() =  this
-    private var disciplinas = listOf<Aluno>()
+    private var alunos = listOf<Aluno>()
     private var REQUEST_CADASTRO = 1
     private var REQUEST_REMOVE= 2
 
@@ -39,9 +39,9 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
         configuraMenuLateral()
 
         // configurar cardview
-        recyclerDisciplinas?.layoutManager = LinearLayoutManager(context)
-        recyclerDisciplinas?.itemAnimator = DefaultItemAnimator()
-        recyclerDisciplinas?.setHasFixedSize(true)
+        recyclerAlunos?.layoutManager = LinearLayoutManager(context)
+        recyclerAlunos?.itemAnimator = DefaultItemAnimator()
+        recyclerAlunos?.setHasFixedSize(true)
     }
     override fun onResume() {
         super.onResume()
@@ -50,21 +50,29 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
 
     fun taskDisciplinas() {
         Thread {
-            this.disciplinas = AlunoService.getDisciplinas(context)
+            this.alunos = AlunoService.getAlunos(context)
             runOnUiThread {
                 // atualizar lista
-                recyclerDisciplinas?.adapter = AlunoAdapter(disciplinas) { onClickDisciplina(it) }
+                recyclerAlunos?.adapter = AlunoAdapter(alunos) { onClickDisciplina(it) }
+                enviaNotificacao(alunos.get(2))
             }
         }.start()
     }
 
     // tratamento do evento de clicar em uma disciplina
-    fun onClickDisciplina(disciplina: Aluno) {
-        Toast.makeText(context, "Clicou disciplina ${disciplina.nome}", Toast.LENGTH_SHORT).show()
+    fun onClickDisciplina(aluno: Aluno) {
+        Toast.makeText(context, "Clicou no aluno ${aluno.nome}", Toast.LENGTH_SHORT).show()
         val intent = Intent(context, DetalhesAlunoActivity::class.java)
-        intent.putExtra("disciplina", disciplina)
+        intent.putExtra("aluno", aluno)
         startActivityForResult(intent, REQUEST_REMOVE)
     }
+
+    fun enviaNotificacao(aluno: Aluno){
+        val intent = Intent(this, DetalhesAlunoActivity::class.java)
+        intent.putExtra("aluno", aluno)
+        NotificationUtil.create(this, 2, intent, "Aplicativo Gym Manager", "Você tem uma nova notificação ${aluno.nome}")
+    }
+
 
     // configuração do navigation Drawer com a toolbar
     private fun configuraMenuLateral() {
@@ -181,5 +189,6 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
             // atualizar lista de disciplinas
             taskDisciplinas()
         }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

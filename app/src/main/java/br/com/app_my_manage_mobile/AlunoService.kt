@@ -7,29 +7,51 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 object AlunoService {
-    val host = "https://fesousa.pythonanywhere.com"
+    val host = "https://luanrodrigues.pythonanywhere.com"
     val TAG = "WS_LMSApp"
 
-    fun getDisciplinas (context: Context): List<Aluno> {
+    fun getAlunos (context: Context): List<Aluno> {
         if( AndroidUtils.isInternetDisponivel(context) ) {
-            val url = "$host/disciplinas"
+            val url = "$host/alunos"
             var json =  HttpHelper.get(url)
 
+            var alunos = parserJson<List<Aluno>>(json)
+
+            for (a in alunos) {
+                saveOffline(a)
+            }
             Log.d(TAG, json)
 
-            return parserJson<List<Aluno>>(json)
+            return alunos
         } else {
-            return ArrayList()
+            var dao = DatabaseManager.getAlunoDAO()
+            return dao.findAll()
         }
     }
-    fun save(disciplina: Aluno): Response {
-        val json = HttpHelper.post("$host/disciplinas", disciplina.toJson())
+
+    fun saveOffline(aluno: Aluno) : Boolean {
+        val dao = DatabaseManager.getAlunoDAO()
+        if(! existeAluno(aluno)) {
+            dao.insert(aluno)
+        }
+        return true
+
+    }
+
+    fun existeAluno(aluno: Aluno): Boolean {
+        val dao = DatabaseManager.getAlunoDAO()
+        return  dao.getById(aluno.id) != null
+    }
+
+
+    fun save(aluno: Aluno): Response {
+        val json = HttpHelper.post("$host/alunos", aluno.toJson())
         return parserJson(json)
     }
 
-    fun delete(disciplina: Aluno): Response {
-        Log.d(TAG, disciplina.id.toString())
-        val url = "$host/disciplinas/${disciplina.id}"
+    fun delete(aluno: Aluno): Response {
+        Log.d(TAG, aluno.id.toString())
+        val url = "$host/alunos/${aluno.id}"
         val json = HttpHelper.delete(url)
         Log.d(TAG, json)
         return parserJson(json)

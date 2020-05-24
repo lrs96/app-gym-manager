@@ -69,6 +69,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 var i = Intent(this, FichaMedicaActivity::class.java)
                 startActivity(i)
             }
+            R.id.nav_localizacao -> {
+                startActivity(Intent(this, MapsActivity::class.java))
+            }
 
             R.id.nav_sair -> {
                 var editor: SharedPreferences.Editor =
@@ -86,36 +89,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // fecha menu depois de tratar o evento
         layoutMenuLateral.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    fun clickBtnAlertErro(){
-        showMsgAlerta(this, "Titulo","Esta é a mensagem ... ", TipoMsg.erro)
-    }
-
-    fun clickBtnAlertSucess(){
-        showMsgAlerta(this, "Titulo","Esta é a mensagem ... ", TipoMsg.sucesso)
-    }
-
-    fun clickBtnEvolucaoFisica(view: View){
-        var i = Intent(this, EvolucaoFisicaActivity::class.java)
-        startActivity(i)
-
-    }
-
-    fun clickBtnaFichaMedica(view: View){
-        var i = Intent(this, FichaMedicaActivity::class.java)
-        startActivity(i)
-
-    }
-
-    fun clickBtnaRelatorioMensal(view: View){
-        var i = Intent(this, RelatorioMensalActivity::class.java)
-        startActivity(i)
-
-    }
-
-    fun clickBtnEnviar(view: View) {
-        showMsgAlerta(this, "Titulo", "Esta é a mensagem...", TipoMsg.info)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -177,4 +150,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

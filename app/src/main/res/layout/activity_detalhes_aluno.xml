@@ -22,12 +22,12 @@ android:fitsSystemWindows="true">
         android:paddingHorizontal="10dp"
         android:paddingTop="70dp">
         <ImageView
-            android:id="@+id/imagemDisciplina"
+            android:id="@+id/imagemAluno"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="center"/>
         <TextView
-            android:id="@+id/nomeDisciplina"
+            android:id="@+id/nomeAluno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"/>

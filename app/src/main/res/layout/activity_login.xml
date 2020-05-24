@@ -67,11 +67,19 @@
             android:inputType="textPassword"
             android:paddingHorizontal="10dp" />
 
+        <CheckBox
+            android:id="@+id/checkBoxLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:text="Lembrar login"
+            android:textColor="@color/white" />
+
         <Button
             android:id="@+id/btnLogar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:background="@color/white"
             android:fontFamily="sans-serif-black"
             android:text="@string/btn_logar"

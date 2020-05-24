@@ -11,11 +11,11 @@ import com.squareup.picasso.Picasso
 
 // define o construtor que recebe a lista de disciplinas e o evento de clique
 class AlunoAdapter (
-    val disciplinas: List<Aluno>,
-    val onClick: (Aluno) -> Unit): RecyclerView.Adapter<AlunoAdapter.DisciplinasViewHolder>() {
+    val alunos: List<Aluno>,
+    val onClick: (Aluno) -> Unit): RecyclerView.Adapter<AlunoAdapter.AlunosViewHolder>() {
 
     // ViewHolder com os elemetos da tela
-    class DisciplinasViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class AlunosViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val cardNome: TextView
         val cardImg : ImageView
         var cardProgress: ProgressBar
@@ -25,7 +25,7 @@ class AlunoAdapter (
             cardNome = view.findViewById<TextView>(R.id.cardNome)
             cardImg = view.findViewById<ImageView>(R.id.cardImg)
             cardProgress = view.findViewById<ProgressBar>(R.id.cardProgress)
-            cardView = view.findViewById<CardView>(R.id.card_disciplinas)
+            cardView = view.findViewById<CardView>(R.id.card_alunos)
 
         }
 
@@ -33,34 +33,34 @@ class AlunoAdapter (
 
     // Quantidade de disciplinas na lista
 
-    override fun getItemCount() = this.disciplinas.size
+    override fun getItemCount() = this.alunos.size
 
     // inflar layout do adapter
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DisciplinasViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlunosViewHolder {
         // infla view no adapter
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_disciplina, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_aluno, parent, false)
 
         // retornar ViewHolder
-        val holder = DisciplinasViewHolder(view)
+        val holder = AlunosViewHolder(view)
         return holder
     }
 
     // bind para atualizar Views com os dados
 
-    override fun onBindViewHolder(holder: DisciplinasViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AlunosViewHolder, position: Int) {
         val context = holder.itemView.context
 
         // recuperar objeto disciplina
-        val disciplina = disciplinas[position]
+        val aluno = alunos[position]
 
         // atualizar dados de disciplina
 
-        holder.cardNome.text = disciplina.nome
+        holder.cardNome.text = aluno.nome
         holder.cardProgress.visibility = View.VISIBLE
 
         // download da imagem
-        Picasso.with(context).load(disciplina.foto).fit().into(holder.cardImg,
+        Picasso.with(context).load(aluno.foto).fit().into(holder.cardImg,
             object: com.squareup.picasso.Callback{
                 override fun onSuccess() {
                     holder.cardProgress.visibility = View.GONE
@@ -72,6 +72,6 @@ class AlunoAdapter (
             })
 
         // adiciona evento de clique
-        holder.itemView.setOnClickListener {onClick(disciplina)}
+        holder.itemView.setOnClickListener {onClick(aluno)}
     }
 }

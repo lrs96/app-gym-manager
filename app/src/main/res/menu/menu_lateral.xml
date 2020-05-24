@@ -14,6 +14,10 @@
         <item android:id="@+id/nav_adicionar_avaliacao"
             android:title="Adicionar Avaliação"
             android:icon="@drawable/ic_local_black" />
+        <item
+            android:id="@+id/nav_localizacao"
+            android:icon="@drawable/ic_local_black"
+            android:title="Localização" />
         <item android:id="@+id/nav_sair"
             android:title="Sair"
             android:icon="@drawable/ic_local_black" />
