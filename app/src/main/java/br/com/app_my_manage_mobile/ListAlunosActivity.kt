@@ -109,6 +109,14 @@ class ListAlunosActivity : AppCompatActivity() , NavigationView.OnNavigationItem
                 startActivity(i)
             }
 
+            R.id.nav_localizacao -> {
+                var i = Intent(this, MapsActivity::class.java)
+                startActivity(i)
+            }
+            R.id.nav_tirarfoto -> {
+                var i = Intent(this, FotoAlunoActivity::class.java)
+                startActivity(i)
+            }
             R.id.nav_sair -> {
                 var editor: SharedPreferences.Editor =
                     getSharedPreferences("pref", Context.MODE_PRIVATE).edit()

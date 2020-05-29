@@ -72,7 +72,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_localizacao -> {
                 startActivity(Intent(this, MapsActivity::class.java))
             }
-
+            R.id.nav_tirarfoto -> {
+                startActivity(Intent(this, FotoAlunoActivity::class.java))
+            }
             R.id.nav_sair -> {
                 var editor: SharedPreferences.Editor =
                     getSharedPreferences("pref", Context.MODE_PRIVATE).edit()

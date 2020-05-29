@@ -6,11 +6,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import br.com.app_my_manage_mobile.bo.validarCamposLogin
 import br.com.app_my_manage_mobile.validation.LoginValidation
 import kotlinx.android.synthetic.main.activity_login.*
+import java.util.concurrent.Executor
+import androidx.biometric.BiometricConstants
+import androidx.biometric.BiometricPrompt
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var executor: Executor
+    private lateinit var biometricPrompt: BiometricPrompt
+    private lateinit var promptInfo: BiometricPrompt.PromptInfo
+    private val context: Context get() =  this
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -25,7 +35,43 @@ class LoginActivity : AppCompatActivity() {
         edtLogin.findViewById<EditText>(R.id.edtLogin)
         edtSenha.findViewById<EditText>(R.id.edtSenha)
 
-        btnLogar?.setOnClickListener{ onClickLogin() }
+        executor = ContextCompat.getMainExecutor(this)
+        biometricPrompt = androidx.biometric.BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
+                override fun onAuthenticationError(errorCode: Int,
+                                                   errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    Toast.makeText(applicationContext,
+                        "Erro de autenticação: $errString", Toast.LENGTH_SHORT)
+                        .show()
+                }
+
+                override fun onAuthenticationSucceeded(
+                    result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    Toast.makeText(applicationContext,
+                        "Autenticação feita com sucesso", Toast.LENGTH_SHORT)
+                        .show()
+                    var i = Intent(context, MainActivity::class.java)
+                    startActivity(i)
+                }
+
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    Toast.makeText(applicationContext, "Falha na Autenticação",
+                        Toast.LENGTH_SHORT)
+                        .show()
+                }
+            })
+
+        promptInfo = androidx.biometric.BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Biometria")
+            .setSubtitle("Utilize sua biometria para fazer login")
+            .setNegativeButtonText("Usar dados da conta")
+            .build()
+
+        // Prompt appears when user clicks "Log in".
+        // Consider integrating with the keystore to unlock cryptographic operations,
+        // if needed by your app.
 
         // procurar pelas preferências, se pediu para guardar usuário e senha
         var lembrar = Prefs.getBoolean("lembrar")
@@ -37,11 +83,15 @@ class LoginActivity : AppCompatActivity() {
             checkBoxLogin.isChecked = lembrar
 
         }
+        biometricPrompt.authenticate(promptInfo)
+        btnLogar?.setOnClickListener{
+            onClickLogin()
+        }
+
 
     }
 
     fun onClickLogin() {
-
         var login = edtLogin.text.toString()
         var senha = edtSenha.text.toString()
 
@@ -69,6 +119,5 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
 
 }
