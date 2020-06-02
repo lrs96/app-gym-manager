@@ -40,9 +40,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun onAuthenticationError(errorCode: Int,
                                                    errString: CharSequence) {
                     super.onAuthenticationError(errorCode, errString)
-                    Toast.makeText(applicationContext,
-                        "Erro de autenticação: $errString", Toast.LENGTH_SHORT)
-                        .show()
+                    // Toast.makeText(applicationContext, "Erro de autenticação: $errString", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onAuthenticationSucceeded(
@@ -64,14 +62,11 @@ class LoginActivity : AppCompatActivity() {
             })
 
         promptInfo = androidx.biometric.BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Biometria")
-            .setSubtitle("Utilize sua biometria para fazer login")
+            .setTitle("Login")
+            .setSubtitle("Faça login com sua digital")
             .setNegativeButtonText("Usar dados da conta")
             .build()
 
-        // Prompt appears when user clicks "Log in".
-        // Consider integrating with the keystore to unlock cryptographic operations,
-        // if needed by your app.
 
         // procurar pelas preferências, se pediu para guardar usuário e senha
         var lembrar = Prefs.getBoolean("lembrar")

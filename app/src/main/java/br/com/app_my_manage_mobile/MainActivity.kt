@@ -25,8 +25,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
         //Menu superior
         supportActionBar?.setTitle("Dashboard")
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeButtonEnabled(true)
+
         configuraMenuLateral()
 
     }
