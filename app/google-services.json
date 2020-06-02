@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "882119972599",
+    "firebase_url": "https://gym-manager-cia-life.firebaseio.com",
+    "project_id": "gym-manager-cia-life",
+    "storage_bucket": "gym-manager-cia-life.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882119972599:android:21429090b3f30917f865f2",
+        "android_client_info": {
+          "package_name": "br.com.app_my_manage_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882119972599-uhsu1ameoi7vsjrn81kj4fiobu5oudv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWenHJ1gjjWdlTXkTHyyc5Z73CCfjCfHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882119972599-uhsu1ameoi7vsjrn81kj4fiobu5oudv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

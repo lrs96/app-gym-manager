@@ -18,7 +18,6 @@
 /build
 /captures
 .externalNativeBuild
-/app/google-services.json
 .DS_Store
 /build
 /captures
@@ -35,4 +34,3 @@
 /build
 /captures
 .externalNativeBuild
-/app/google-services.json
