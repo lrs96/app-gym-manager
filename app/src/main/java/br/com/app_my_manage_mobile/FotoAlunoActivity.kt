@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -20,6 +21,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_foto_aluno.*
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -35,6 +37,11 @@ class FotoAlunoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_foto_aluno);
+
+        //Menu superior
+        supportActionBar?.setTitle("Tirar foto")
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         // var buttonCamera =  btnCamera.findViewById<Button>(R.id.btnCamera);
         var imageView =  imageView.findViewById<ImageView>(R.id.imageView);
 
@@ -46,6 +53,15 @@ class FotoAlunoActivity : AppCompatActivity() {
         }
 
         btnCamera.setOnClickListener{ abrirCamera()}
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            android.R.id.home -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun abrirCamera() {
@@ -65,7 +81,7 @@ class FotoAlunoActivity : AppCompatActivity() {
                     val photoURI: Uri = FileProvider.getUriForFile(
                         this,
                         BuildConfig.APPLICATION_ID + ".provider",
-                        it
+                        photoFile
                     )
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
                     startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO)
@@ -103,30 +119,36 @@ class FotoAlunoActivity : AppCompatActivity() {
             val photoH: Int = outHeight
 
             // Determine how much to scale down the image
-            val scaleFactor: Int = Math.min(photoW / targetW, photoH / targetH)
+            val scaleFactor: Int = (photoH / targetH).coerceAtMost(photoW / targetW)
 
             // Decode the image file into a Bitmap sized to fill the View
             inJustDecodeBounds = false
             inSampleSize = scaleFactor
             inPurgeable = true
         }
+
         BitmapFactory.decodeFile(currentPhotoPath, bmOptions)?.also { bitmap ->
             imageView.setImageBitmap(bitmap)
         }
     }
 
+    private fun addimageGallery() {
+        Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).also { mediaScanIntent ->
+            val f = File(currentPhotoPath)
+            mediaScanIntent.data = Uri.fromFile(f)
+            sendBroadcast(mediaScanIntent)
+            // Toast.makeText(this, "Chamou a função de adicionar imagem, caminho da imagem $mediaScanIntent", Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).also { mediaScanIntent ->
-                val f = File(currentPhotoPath)
-                mediaScanIntent.data = Uri.fromFile(f)
-                sendBroadcast(mediaScanIntent)
-                setPic()
-            }
+            setPic()
             // val imageBitmap = data?.extras?.get("data") as Bitmap
             // imageView.setImageBitmap(imageBitmap)
         }
 
+        addimageGallery()
         super.onActivityResult(requestCode, resultCode, data)
     }
 }
