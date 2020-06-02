@@ -50,7 +50,7 @@ class FotoAlunoActivity : AppCompatActivity() {
 
     fun abrirCamera() {
         var intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, 1)
+        // startActivityForResult(intent, 1)
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             // Ensure that there's a camera activity to handle the intent
             takePictureIntent.resolveActivity(packageManager)?.also {
